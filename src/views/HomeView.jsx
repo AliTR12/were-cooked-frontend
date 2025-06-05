@@ -36,7 +36,10 @@ export default function HomeView({ presenter }) {
           <div className="grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-6">
             {paginated.length > 0 ? (
               paginated.map((recipe) => (
-                <div key={recipe.id} className="bg-gray-50 p-4 rounded-xl shadow  bg-white dark:bg-gray-700 dark:text-white dark:border-gray-500">
+                <div 
+                  key={recipe.id} 
+                  className="p-4 rounded-xl shadow bg-white dark:bg-gray-700 dark:text-white dark:border-gray-500 transition-all duration-300 ease-in-out hover:-translate-y-1.5 hover:shadow-2xl cursor-pointer"
+                >
                   <img src={recipe.Image} alt={recipe.Title} className="w-full h-40 object-cover rounded-lg mb-2" />
                   <h2 className="text-lg font-semibold text-blue-700 dark:text-white hover:underline">
                     <Link to={`/resep/${recipe.id}`}>{recipe.Title}</Link>
